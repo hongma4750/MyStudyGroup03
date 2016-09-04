@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+       
+<tiles-definitions>
+	<definition name="login.tiles" template="/WEB-INF/views/login/login.jsp">		
+	</definition>
+	
+	<definition name="regi.tiles" template="/WEB-INF/views/login/regi.jsp">	
+	</definition>
+	
+	<definition name="bbslist.tiles" template="/WEB-INF/views/layouts-tiles.jsp">
+	    <put-attribute name="common" value="/WEB-INF/views/common/common.jsp"/>
+	    <put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/>
+	    
+	    <put-attribute name="top_inc" value="/WEB-INF/views/common/top.jsp"/>
+	    <put-attribute name="top_menu" value="/WEB-INF/views/common/top_menu.jsp"/>
+	   
+	    <put-attribute name="main" value="/WEB-INF/views/bbs/bbslist.jsp"/>
+	   
+  </definition>
+  
+  <definition name="bbswrite.tiles" extends="bbslist.tiles">
+  		<put-attribute name="main" value="/WEB-INF/views/bbs/bbswrite.jsp"/>
+  </definition>
+  
+  <definition name="bbsdetail.tiles" extends="bbslist.tiles">
+  		<put-attribute name="main" value="/WEB-INF/views/bbs/bbsdetail.jsp"/>
+  </definition>
+  
+  <definition name="bbsupdate.tiles" extends="bbslist.tiles">
+  		<put-attribute name="main" value="/WEB-INF/views/bbs/bbsupdate.jsp"/>
+  </definition>
+  
+  <definition name="bbsanswer.tiles" extends="bbslist.tiles">
+  		<put-attribute name="main" value="/WEB-INF/views/bbs/bbsanswer.jsp"/>
+  </definition>
+  
+  <definition name="chart.tiles" extends="bbslist.tiles">
+  		<put-attribute name="main" value="/WEB-INF/views/bbs/chart.jsp"/>
+  </definition>
+  
+   <definition name="actions.tiles" extends="bbslist.tiles">
+  		<put-attribute name="main" value="/WEB-INF/views/bbs/actions.jsp"/>
+  </definition>
+  
+   <definition name="actionlist.tiles" extends="bbslist.tiles">
+  		<put-attribute name="main" value="/WEB-INF/views/bbs/actionlist.jsp"/>
+  </definition>
+  
+  <definition name="actionupdate.tiles" extends="bbslist.tiles">
+  		<put-attribute name="main" value="/WEB-INF/views/bbs/actionupdate.jsp"/>
+  </definition>
+	
+</tiles-definitions>
