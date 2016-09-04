@@ -1,15 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-    <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 
-    <fmt:requestEncoding value="utf-8"/>
-<!DOCTYPE html>
-<html lang="ko">
-<head>
+<fmt:requestEncoding value="utf-8"/>
+
 	<!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -28,27 +26,23 @@
     <script src="js/plugins/morris/morris.min.js"></script>
     <script src="js/plugins/morris/morris-data.js"></script>
     
-</head>
-
-<div id="wrapper">
-	<div>
-		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-			<div>
-				<tiles:insertAttribute name="nav"/>
-			</div>
-			
-			<div>
-				<tiles:insertAttribute name="sidebar"/>
-			</div>
-		</nav>
-	</div>
-	
-	<div>
-		<tiles:insertAttribute name="content"/>
-	</div>
-</div>
-
-
-
-</body>
-</html>
+    <div id="page-wrapper">
+    
+		<div class="row" style="width:100%;">
+		  <div class="col-md-6">
+		    <a href="#" class="thumbnail" style="display:inline-block; float:left">
+		      <img src="image/myback.jpg" alt="...">
+		    </a>
+		  </div>
+		  
+		  <div class="col-md-6">
+		    <a href="#" class="thumbnail">
+		      <img src="image/gooddd.jpeg" alt="...">
+		    </a>
+		  </div>
+		</div>
+		
+		
+    </div>
+        <!-- /#page-wrapper -->
+        
