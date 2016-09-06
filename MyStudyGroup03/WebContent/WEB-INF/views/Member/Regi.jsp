@@ -8,29 +8,40 @@
 
 <fmt:requestEncoding value="utf-8"/>
 
-	<!-- Bootstrap Core CSS -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="Dashboard">
+<meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+<!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="css/sb-admin.css" rel="stylesheet">
-    <!-- Morris Charts CSS -->
-    <link href="css/plugins/morris.css" rel="stylesheet">
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" />
+    <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">    
     
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Morris Charts JavaScript -->
-    <script src="js/plugins/morris/raphael.min.js"></script>
-    <script src="js/plugins/morris/morris.min.js"></script>
-    <script src="js/plugins/morris/morris-data.js"></script>
-    
-    
-<div id="page-wrapper">
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
 
-<div class="row"style="width:100%;">
-    <form>
+    <script src="assets/js/chart-master/Chart.js"></script>
+    
+    <!-- 주소 검색 script -->
+    <script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
+    
+    <!-- 자동 입력 방지 script -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    
+    
+<section id="main-content">
+	<section class="wrapper">
+		<div class="row">
+			<div class="col-lg-9 main-chart">
+			
+				<form>
 
 	  <div class="col-md-8">
 	    <label for="exampleInputId">ID</label>
@@ -105,7 +116,59 @@
 	</div>
 	</div>
 	
+	<br>
 	
+	<div class="row" style="margin:auto; padding:auto;">
+		<div class="row" style="margin:auto; padding:auto;">
+			<div class="col-md-10">
+			<label for="exampleInputId">우편 번호</label>
+			<br>
+		</div>
+		</div>
+		
+	
+
+		<div class="row" style="margin:auto; padding:auto;">
+			<div class="col-md-5">
+				<input type="text" maxlength="5" name="zip1" class="form-control postcodify_postcode5">
+			</div>
+			
+			<div class="col-md-5">
+				<input type="button" value="검색" id="search_button">
+			</div>
+		</div>
+		<br>
+		
+		<div class="row" style="margin:auto; padding:auto;">
+			<div class="col-md-8">
+				<label for="exampleInputId">도로명 주소</label>
+				<input type="text" name="addr1" class="form-control postcodify_address" readonly >
+			</div>
+		</div>
+		
+		<div class="row" style="margin:auto; padding:auto;">
+			<div class="col-md-8">
+				<label for="exampleInputId">상세 주소</label>
+				<input type="text" name="addr2" class="form-control postcodify_details" >
+			</div>
+		</div>
+		
+		<div class="row" style="margin:auto; padding:auto;">
+			<div class="col-md-8">
+				<label for="exampleInputId">참고 항목</label>
+				<input type="text" name="addr1" class="form-control postcodify_extra_info"  readonly>
+			</div>
+		</div>
+
+	</div>
+
+<script> 
+$("#search_button").postcodifyPopUp();
+
+</script>
+	
+	
+	<br><br>
 	<div class="row" style="margin:auto; padding:auto;">
 	<div class="col-md-8">
 	
@@ -162,9 +225,17 @@
 		
 		</div>
 	
-	<br>
+		<br>
 
+		<div class="row" style="margin:auto; padding:auto;">
+			<label for="exampleInputId">자동기입방지</label>
+		</div>
+		
+	<div class="g-recaptcha" data-sitekey="6LcTfSkTAAAAANVVoIidarUPOjr0goGflPzvg20k"></div>
 	
+	
+	
+		<br><br><br>
 	  
 	  <div class="col-md-4">
 	  	<button type="submit" class="btn btn-default">회원가입</button>
@@ -172,6 +243,19 @@
 	  </div>
 	  
 	</form>
+				
+				
+				
+			</div>
+		</div>
+	</section>
+</section>
+    
+    
+<div id="page-wrapper">
+
+<div class="row"style="width:100%;">
+    
 	</div>
 	
 	
@@ -209,5 +293,26 @@ $("#checkAll").click(function(){
 			}
 		}
 	</script>
+	
+	
+	<script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery-1.8.3.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.sparkline.js"></script>
+
+
+    <!--common script for all pages-->
+    <script src="assets/js/common-scripts.js"></script>
+    
+    <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
+
+    <!--script for this page-->
+    <script src="assets/js/sparkline-chart.js"></script>    
+	<script src="assets/js/zabuto_calendar.js"></script>
+	
 
 
