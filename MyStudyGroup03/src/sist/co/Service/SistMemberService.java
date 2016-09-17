@@ -10,5 +10,9 @@ public interface SistMemberService {
 	//회원가입
 	boolean addMember(SistMemberVO membervo) throws Exception;
 	
-	int getID(SistMemberVO vo);
+	int getID(SistMemberVO vo) throws Exception;
+	
+	void insertMember(SistMemberVO vo) throws Exception;
+	
+	void updateActionMember(String m_id);
 }

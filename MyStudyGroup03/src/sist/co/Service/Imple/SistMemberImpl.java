@@ -8,9 +8,6 @@ import sist.co.Model.SistMemberVO;
 import sist.co.Service.SistMemberDAO;
 import sist.co.Service.SistMemberService;
 
-
-
-
 @Service
 public class SistMemberImpl implements SistMemberService{
 
@@ -18,24 +15,32 @@ public class SistMemberImpl implements SistMemberService{
 	SistMemberDAO sistMemberDAO;
 
 	@Override
-	@Transactional(readOnly=true)		//읽기전용 세팅
 	public SistMemberVO login(SistMemberVO member) throws Exception {
 		return sistMemberDAO.login(member);
 	}
 
 	
 	@Override
-	@Transactional					//수정가능 세팅
 	public boolean addMember(SistMemberVO membervo) throws Exception {
 		return sistMemberDAO.addMember(membervo);
 	}
 
 
 	@Override
-	@Transactional(readOnly=true)
-	public int getID(SistMemberVO vo) {
-		
-		return sistMemberDAO.getID(vo);
+	public int getID(SistMemberVO vo) throws Exception{
+		return (int)sistMemberDAO.getID(vo);
+	}
+
+
+	@Override
+	public void insertMember(SistMemberVO vo) throws Exception {
+		sistMemberDAO.insertMember(vo);
+	}
+
+
+	@Override
+	public void updateActionMember(String m_id) {
+		sistMemberDAO.updateActionMember(m_id);
 	}
 	
 	

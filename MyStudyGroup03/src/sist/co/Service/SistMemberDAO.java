@@ -25,7 +25,15 @@ public class SistMemberDAO {
 		
 	}
 	
-	public int getID(SistMemberVO vo){
+	public int getID(SistMemberVO vo) throws Exception{
 		return (int)sqlSession.selectOne(ns+"getID", vo);
+	}
+	
+	public void insertMember(SistMemberVO vo) throws Exception{
+		sqlSession.insert(ns+"insertMember",vo);
+	}
+		
+	public void updateActionMember(String m_id){
+		sqlSession.update(ns+"updateActionMember",m_id);
 	}
 }
