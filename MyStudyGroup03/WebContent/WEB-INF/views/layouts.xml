@@ -17,5 +17,7 @@
   <definition name="Regi.tiles" extends = "index.tiles">
   		<put-attribute name="content" value="/WEB-INF/views/Member/Regi.jsp"/>
   </definition>
+  
+  <definition name="login.tiles" template = "/WEB-INF/views/Member/login.jsp"></definition>
 
 </tiles-definitions>

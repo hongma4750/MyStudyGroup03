@@ -189,15 +189,120 @@
             </div>
             
             <div class="top-menu">
-            	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li><!-- 수정요망 -->
-            	</ul>
+            	<c:if test="${login.m_id ne null }">
+	            	<ul class="nav pull-right top-menu">
+	                    <li><a class="logout" onclick="alert('개발중이지롱')">Logout</a></li><!-- 수정요망 -->
+	            	</ul>
+	            	
+	            	<ul class="nav pull-right top-menu">
+	            		<li><a data-toggle="modal" class="logout" href="index.do#myModal">MyInfo</a></li><!-- 수정요망 -->
+	            	</ul>
+            	</c:if>
             	
-            	<ul class="nav pull-right top-menu">
-            		<li><a class="logout" href="Regi.do">Join</a></li>
-            	</ul>
+            	<c:if test="${login.m_id eq null }">
+	            	<ul class="nav pull-right top-menu">
+	            		<li><a class="logout" href="Regi.do">Join</a></li>
+	            	</ul>
+	            	
+	            	<ul class="nav pull-right top-menu">
+	                    <li><a class="logout" href="login.do" >login</a></li><!-- 수정요망 -->
+	            	</ul>
+	            	
+            	</c:if>
             </div>
         </header>
+        
+        
+        <!-- Modal -->
+        	<c:if test="${login.m_id ne null }">
+		          <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+		              <div class="modal-dialog">
+		                  <div class="modal-content">  
+		                  
+		                  		     <div class="modal-header">
+									    <button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true">×</button>
+									    <h3 class="smaller lighter blue no-margin modal-title">회원 정보</h3>
+									</div>
+									 	<p class="bg-success">아이디 : ${login.m_id }</p>
+									 	<p class="bg-success">이름 : ${login.m_name }</p>
+									 	<c:if test="${login.m_gender == 'm' }">
+									 		<p class="bg-success">성별 : 남자</p>
+									 	</c:if>
+									 	
+									 	<c:if test="${login.m_gender == 'w' }">
+									 		<p class="bg-success">성별 : 여자</p>
+									 	</c:if>
+									 	
+									 	<p class="bg-success">생년월일 : 
+										<c:out value="${fn:substring(login.m_birth,0,4) }"/>년&nbsp; 
+									 	<c:out value="${fn:substring(login.m_birth,4,6) }"/>월&nbsp;
+									 	<c:out value="${fn:substring(login.m_birth,6,8) }"/>일
+									 	</p>
+									 	<p class="bg-success">자택주소 : ${login.m_postal} ${login.m_address }</p>
+									 	
+									 	<c:set var="market" value="${login.m_marketing }"/>
+									 	<p class="bg-success">마켓팅 수신동의 : 
+									 		
+									 		<c:if test="${market eq ' null' }">
+									 			<input type="checkbox" disabled>Email
+									 			<input type="checkbox" disabled>SMS
+									 			<input type="checkbox" disabled>PHONE
+									 		</c:if>
+									 		
+									 		<c:if test="${market ne ' null' }">
+									 			<c:set var="marketing" value="${fn:split(market,',') }"/>
+									 			
+									 			<c:forEach var="test" items="${marketing }" varStatus="s">
+									 				<c:if test="${test == 'Email'}"><c:set var="email" value="test"/></c:if>
+									 				<c:if test="${test == 'SMS'}"><c:set var="sms" value="test"/></c:if>
+									 				<c:if test="${test == 'Phone'}"><c:set var="phone" value="test"/></c:if>
+									 			</c:forEach>
+									 		</c:if>
+											
+											<c:if test="${email ne null }">
+												<input type="checkbox" value="email" disabled checked>Email
+											</c:if>
+											
+											<c:if test="${email eq null }">
+												<input type="checkbox" value="email" disabled>Email
+											</c:if>
+											
+											<c:if test="${sms ne null }">
+												<input type="checkbox" value="sms" disabled checked>SMS
+											</c:if>
+											
+											<c:if test="${sms eq null }">
+												<input type="checkbox" value="sms" disabled>SMS
+											</c:if>
+											
+											<c:if test="${phone ne null }">
+												<input type="checkbox" value="phone" disabled checked>PHONE
+											</c:if>
+											
+											<c:if test="${phone eq null }">
+												<input type="checkbox" value="phone" disabled>PHONE
+											</c:if>
+									 		
+									 	
+									 	</p>
+									 	<p class="bg-success">email주소 : ${login.m_email }</p>
+									 	<p class="bg-success">휴대전화 : ${login.m_phone }</p>
+									 	
+									<div class="modal-body">
+									   
+									</div>
+									 
+									<div class="modal-footer">
+									    <button class="btn btn-sm btn-danger pull-right" data-dismiss="modal" id="btnClose">
+									        <i class="ace-icon fa fa-times"></i>닫기
+									    </button>
+									</div>
+		                  </div>
+		              </div>
+		          </div>
+	   <!-- modal -->
+		     </c:if>     
+		          
         
         
  <!-- js placed at the end of the document so the pages load faster -->
